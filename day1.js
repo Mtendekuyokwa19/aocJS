@@ -206,3 +206,24 @@ let totalDistance = distances.reduce(
   (accumulator, value) => accumulator + value,
   0,
 );
+
+// part 2
+let similarity = [];
+
+// let leftList = [4, 3, 5, 3, 9, 3];
+// let rightList = [3, 4, 2, 1, 3, 3];
+
+for (let i = 0; i < rightList.length; i++) {
+  let count = 0;
+  for (let ii = 0; ii < leftList.length; ii++) {
+    if (leftList[i] === rightList[ii]) {
+      count++;
+    }
+  }
+  similarity.push(count * leftList[i]);
+}
+
+console.log(
+  similarity.reduce((accumulator, value) => accumulator + value),
+  0,
+);
